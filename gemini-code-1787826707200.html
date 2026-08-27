@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Pizza | Доставка еды в Дзержинске</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фоновые элементы для эффекта Liquid Glass -->
+    <div class="bg-blob blob-red"></div>
+    <div class="bg-blob blob-orange"></div>
+    <div class="bg-blob blob-green"></div>
+
+    <!-- Навигационная панель -->
+    <nav class="glass-nav">
+        <div class="logo">
+            <!-- Заглушка для логотипа -->
+            <img src="logo.png" alt="Crazy Pizza Logo" id="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="navigate('home')">Главная</a></li>
+            <li><a href="#" onclick="navigate('menu')">Меню</a></li>
+            <li><a href="#" onclick="navigate('promo')">Акции</a></li>
+            <li><a href="#" onclick="navigate('delivery')">О доставке</a></li>
+            <li><a href="#" onclick="navigate('reviews')">Отзывы</a></li>
+            <li><a href="#" onclick="navigate('contact')">Контакты</a></li>
+            <li><a href="#" onclick="navigate('profile')">Профиль</a></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 Корзина (<span id="cart-count">0</span>)
+        </div>
+    </nav>
+
+    <!-- Основной контейнер, где будут меняться вкладки -->
+    <main id="app-content">
+        
+        <!-- ВКЛАДКА: ГЛАВНАЯ -->
+        <section id="home" class="page-section active">
+            <!-- Баннер с акциями -->
+            <div class="slider-container glass">
+                <div class="slide" style="background-image: url('https://placehold.co/1200x400/e63946/white?text=АКЦИЯ+1');"></div>
+                <div class="slide" style="background-image: url('https://placehold.co/1200x400/f4a261/white?text=АКЦИЯ+2');"></div>
+            </div>
+
+            <!-- Блок "О нас" -->
+            <div class="about-us glass">
+                <h2>Почему 6000 клиентов выбирают нас?</h2>
+                <p>Уже 14 лет мы радуем жителей Дзержинска самой вкусной и большой пиццей. На кухне творят магию только квалифицированные повара-профессионалы, используя свежайшие продукты.</p>
+                <ul class="features-list">
+                    <li>🍕 Широкий ассортимент по приятным ценам</li>
+                    <li>📦 Качественная одноразовая упаковка и доставка в термосумках</li>
+                    <li>🎁 Дарим подарки и скидку 10% в День Рождения!</li>
+                    <li>⏱ Доставка от 30 минут (возим и за город)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ВКЛАДКА: МЕНЮ -->
+        <section id="menu" class="page-section hidden">
+            <h2 class="section-title">Наше Меню</h2>
+            <div class="menu-grid" id="menu-container">
+                <!-- Категории и товары генерируются через JavaScript -->
+            </div>
+        </section>
+
+        <!-- ВКЛАДКА: О ДОСТАВКЕ -->
+        <section id="delivery" class="page-section hidden glass">
+            <h2>Условия доставки</h2>
+            <div class="delivery-info">
+                <p><strong>Режим работы:</strong> Заказы принимаются ежедневно с 10-00 до 22-30 без выходных.</p>
+                <p><strong>Претензии:</strong> Принимаются в течение 3 часов после получения заказа (если заказ сделан после 20-00, то до 12-00 следующего дня).</p>
+                <p><strong>По городу:</strong> 50 рублей (временно по ситуации с бензином) при заказе на сумму от 600 рублей. В счастливые часы доставка также 50 рублей.</p>
+                <p><strong>Время:</strong> Осуществляется в течение часа. В выходные, праздники и при загруженности кухни время может быть увеличено. В праздники предварительный заказ — гарантия своевременной доставки!</p>
+                
+                <h3>Тарифы за город:</h3>
+                <ul class="tariffs">
+                    <li>Пушкино-Бабушкино — 100 руб. (от 1000 ₽)</li>
+                    <li>Желнино — 150 руб.</li>
+                    <li>Дзержинская ТЕЦ — 100 руб. (от 1000 ₽)</li>
+                    <li>Ул.Менделеева — 150 руб.</li>
+                    <li>Дачный — 200 руб.</li>
+                    <li>Решетиха — 250 руб.</li>
+                    <li>Петряевка, Игумново, Автозаводское шоссе 83 — 350 руб.</li>
+                    <li>Колодкино-Бабино, Завод "Капелла", Пластик, Игумновская ТЕЦ, Завод "Оргстекло" — 300 руб.</li>
+                    <li>Кнауф гипс, Завод "Синтез", Нижегородское шоссе — 250 руб.</li>
+                    <li>Володарск, Полигон М-7 — 450 руб.</li>
+                    <li>Смолино — 800 руб. | Пыра, ул.Зеленая 6 — 500 руб.</li>
+                    <li>Ильдорф — 680 руб. | Завод "Либхер" — 400 руб.</li>
+                    <li>Большая Медведица, Ул.Науки — 150 руб.</li>
+                    <li>Речное шоссе, Завод "Корунд", "Сибурнефтехим", "Капролактам" — 200 руб.</li>
+                </ul>
+                <p><em>Оплата осуществляется в рублях. Цены указаны с учетом НДС. При заказе уточняйте точную стоимость у оператора.</em></p>
+            </div>
+        </section>
+
+        <!-- ВКЛАДКА: КОНТАКТЫ -->
+        <section id="contact" class="page-section hidden">
+            <div class="contact-wrapper">
+                <div class="contact-info glass">
+                    <h2>Наши Контакты</h2>
+                    <p>📍 Город Дзержинск, ул. Марковникова 18а</p>
+                    <p>📞 8 (920) 020-80-89</p>
+                    <p>⏰ 10:00 - 22:30 ежедневно</p>
+                    <p>⚠️ Претензии: в течение 3 часов (до 12:00 след. дня, если заказ после 20:00)</p>
+                </div>
+                <div class="contact-form glass">
+                    <h2>Написать нам</h2>
+                    <form id="feedbackForm">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш E-mail" required>
+                        <textarea placeholder="Сообщение" rows="5" required></textarea>
+                        <!-- Заглушка капчи -->
+                        <div class="captcha-placeholder">
+                            <img src="https://placehold.co/150x50/ccc/333?text=CAPTCHA" alt="Капча">
+                            <input type="text" placeholder="Введите символы" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Отправить</button>
+                        <small>Нажимая «ОТПРАВИТЬ», вы даете согласие на обработку ПД.</small>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ВКЛАДКА: ПРОФИЛЬ (Авторизация) -->
+        <section id="profile" class="page-section hidden">
+            <div class="auth-container glass">
+                <h2 id="auth-title">Вход в аккаунт</h2>
+                <form id="authForm">
+                    <input type="text" placeholder="Телефон или Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <a href="#" class="forgot-pwd" onclick="forgotPassword()">Забыли пароль?</a>
+                    <button type="submit" class="btn-primary">Войти</button>
+                </form>
+                <div class="auth-toggle">
+                    <p id="auth-switch-text">Нет аккаунта? <a href="#" onclick="toggleAuthMode()">Зарегистрироваться!</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Остальные вкладки (Акции, Отзывы - заглушки) -->
+        <section id="promo" class="page-section hidden glass">
+            <h2>Акции (в разработке)</h2>
+        </section>
+        <section id="reviews" class="page-section hidden glass">
+            <h2>Отзывы</h2>
+            <div id="vk_comments_placeholder" style="background:#fff; height:300px; padding:20px; border-radius:10px; color:#333;">
+                Здесь будет виджет комментариев ВКонтакте
+            </div>
+        </section>
+    </main>
+
+    <!-- Боковая панель корзины -->
+    <div id="cart-sidebar" class="glass">
+        <h3>Ваш заказ</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">Итого: <span id="total-price">0</span> ₽</div>
+        <button class="btn-primary">Оформить заказ</button>
+        <button class="btn-secondary" onclick="toggleCart()">Закрыть</button>
+    </div>
+
+    <!-- Фиксированный блок обратного звонка (Внизу) -->
+    <div class="callback-widget glass">
+        <h3>Перезвонить мне</h3>
+        <form class="callback-form">
+            <input type="text" placeholder="👤 ФИО" required>
+            <input type="tel" placeholder="📞 Номер телефона" required>
+            <button type="submit" class="btn-green">Отправить</button>
+        </form>
+    </div>
+
+    <!-- Подвал сайта -->
+    <footer class="site-footer glass">
+        <p>© 2026 ООО «Кристалл-М». ИНН: 5249086380; ОГРН: 1075249000397. Все права защищены.</p>
+        <a href="#" class="privacy-link">Политика Конфиденциальности</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
